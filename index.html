@@ -10,9 +10,14 @@
         <title>Student Grade Table</title>
     </head>
     <body>
-        <div class="container-all col-10 mx-auto mt-3">
-            <header>
-                <h1>Student Grade Table</h1>
+        <div class="container col-10 mx-auto mt-3">
+            <header class="row align-items-center">
+                <div class="col-9">
+                    <h1>Student Grade Table</h1>
+                </div>
+                <div class="col-3 text-right">
+                    <h3>Average Grade <span class="badge badge-secondary"></span></h3>
+                </div>
             </header>
 
             <div class="student-list-container">
@@ -31,6 +36,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="/componets/app.js"></script>
         <script src="/componets/grade-table.js"></script>
+        <script src="/componets/page-header.js"></script>
         <script src="main.js"></script>
     </body>
 </html>
