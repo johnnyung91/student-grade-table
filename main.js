@@ -1,7 +1,9 @@
 //DOM Queries
 var table = document.querySelector(".table");
-var gradeTable = new GradeTable(table)
+var header = document.querySelector("header")
 
-var newApp = new App(gradeTable);
+var newHeader = new PageHeader(header)
+var newGradeTable = new GradeTable(table)
+var newApp = new App(newGradeTable);
 
 newApp.start();
