@@ -16,8 +16,8 @@ class App {
         for (var i = 0; i < grades.length; i++) {
             sum += grades[i].grade
         }
-        var average = sum / grades.length
-        console.log(average)
+        var average = sum / grades.length // average = Average of the grades
+        this.pageHeader.updateAverage(average)
     }
 
     getGrades() {
