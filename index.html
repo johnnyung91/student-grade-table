@@ -5,7 +5,7 @@
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css"
         />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" />
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Student Grade Table</title>
@@ -20,9 +20,9 @@
                     <h3>Average Grade <span class="badge badge-secondary"></span></h3>
                 </div>
             </header>
-
-            <div class="student-list-container">
-                <table class="table table-hover">
+            <hr>
+            <div class="student-list row">
+                <table class="table table-hover col-9">
                     <thead class="thead-dark">
                         <tr>
                             <th scope="col">Student Name</th>
@@ -32,6 +32,46 @@
                     </thead>
                     <tbody></tbody>
                 </table>
+
+                <form action="" class="col-3">
+                    <h3>Add Student</h3>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="studentName"><i class="fa fa-user" aria-hidden="true"></i></span>
+                        </div>
+                        <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Student Name"
+                            aria-label="studentName"
+                            aria-describedby="basic-addon1"
+                        />
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="studentCourse"><i class="fa fa-list" aria-hidden="true"></i></span>
+                        </div>
+                        <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Student Course"
+                            aria-label="studentCourse"
+                            aria-describedby="basic-addon1"
+                        />
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="studentGrade"><i class="fa fa-graduation-cap" aria-hidden="true"></i></span>
+                        </div>
+                        <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Student Grade"
+                            aria-label="studentGrade"
+                            aria-describedby="basic-addon1"
+                        />
+                    </div>
+                </form>
             </div>
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
