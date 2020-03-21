@@ -33,6 +33,10 @@ class App {
         })
     }
 
+    createGrade(name, course, grade) {
+        console.log("hellllo")
+    }
+
     start() {
         this.getGrades();
     }
