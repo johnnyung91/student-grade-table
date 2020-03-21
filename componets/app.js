@@ -37,7 +37,7 @@ class App {
     }
 
     createGrade(name, course, grade) {
-        console.log("hellllo");
+        console.log(name, course, grade);
     }
 
     handleCreateGradeError(error) {
@@ -50,5 +50,6 @@ class App {
 
     start() {
         this.getGrades();
+        this.gradeForm.onSubmit(this.createGrade)
     }
 }
