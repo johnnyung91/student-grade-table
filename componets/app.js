@@ -8,7 +8,12 @@ class App {
         this.createGrade = this.createGrade.bind(this);
         this.handleCreateGradeError = this.handleCreateGradeError.bind(this);
         this.handleCreateGradeSuccess = this.handleCreateGradeSuccess.bind(this);
+        this.deleteGrade = this.deleteGrade.bind(this);
+        this.handleDeleteGradeError = this.handleDeleteGradeError.bind(this);
+        this.handleDeleteGradeSuccess = this.handleDeleteGradeSuccess.bind(this);
     }
+
+    //Methods related to getting grades
     getGrades() {
         $.ajax({
             method: "GET",
@@ -36,6 +41,7 @@ class App {
         this.pageHeader.updateAverage(average);
     }
 
+    //Methods related to adding a new grade
     createGrade(name, course, grade) {
         $.ajax({
             method: "POST",
@@ -58,6 +64,19 @@ class App {
     }
 
     handleCreateGradeSuccess() {
+        this.getGrades();
+    }
+
+    //Methods related to deleting a grade
+    deleteGrade(id) {
+        console.log(id, "working");
+    }
+
+    handleDeleteGradeError(error) {
+        console.error(error);
+    }
+
+    handleDeleteGradeSuccess() {
         this.getGrades();
     }
 
