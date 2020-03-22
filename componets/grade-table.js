@@ -14,7 +14,12 @@ class GradeTable {
         for (var i = 0; i < grades.length; i++) {
             tBody.appendChild(this.renderGradeRow(grades[i], this.deleteGrade));
         }
-        console.log(grades); //Not needed
+        if (!grades) {
+            this.noGradesElement.classList.remove("d-none")
+        } else {
+            this.noGradesElement.classList.add("d-none");
+        }
+        console.log(grades) //Not needed
     }
 
     onDeleteClick(deleteGrade) {
@@ -35,10 +40,10 @@ class GradeTable {
         var deleteButton = document.createElement("button");
         deleteButton.classList.add("btn", "btn-danger");
         deleteButton.textContent = "Delete";
+
         deleteButton.addEventListener("click", function() {
-            console.log("hello")
-            deleteGrade(data.id)
-        })
+            deleteGrade(data.id);
+        });
 
         dataDelete.appendChild(deleteButton);
 

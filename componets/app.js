@@ -69,7 +69,7 @@ class App {
 
     //Methods related to deleting a grade
     deleteGrade(id) {
-        console.log(id, "working");
+        console.log(id);
     }
 
     handleDeleteGradeError(error) {
@@ -83,5 +83,6 @@ class App {
     start() {
         this.getGrades();
         this.gradeForm.onSubmit(this.createGrade);
+        this.gradeTable.onDeleteClick(this.deleteGrade);
     }
 }
