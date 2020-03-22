@@ -38,6 +38,9 @@ class App {
             sum += grades[i].grade;
         }
         var average = (sum / grades.length).toFixed(1); // average = Average of the grades
+        if (isNaN(average)) {
+            average = "--"
+        }
         this.pageHeader.updateAverage(average);
     }
 
