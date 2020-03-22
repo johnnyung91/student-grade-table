@@ -14,7 +14,7 @@ class GradeTable {
         for (var i = 0; i < grades.length; i++) {
             tBody.appendChild(this.renderGradeRow(grades[i], this.deleteGrade));
         }
-        if (!grades) {
+        if (!grades.length) {
             this.noGradesElement.classList.remove("d-none")
         } else {
             this.noGradesElement.classList.add("d-none");
