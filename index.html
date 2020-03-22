@@ -11,58 +11,88 @@
         <title>Student Grade Table</title>
     </head>
     <body>
-        <div class="container col-10 mx-auto mt-3">
-            <header class="row align-items-center">
-                <div class="col-9">
-                    <h1>Student Grade Table</h1>
-                </div>
-                <div class="col-3 text-right">
-                    <h3>Average Grade <span class="badge badge-secondary"></span></h3>
+        <div class="container container-all col-10 mx-auto mt-3">
+            <header class="header-container">
+                <div class="row align-items-center">
+                    <div class="col-9">
+                        <h1>Student Grade Table</h1>
+                    </div>
+                    <div class="col-3 text-right">
+                        <h3>Average Grade <span class="badge badge-secondary"></span></h3>
+                    </div>
                 </div>
             </header>
-            <hr>
-            <div class="student-list row">
-                <table class="table table-hover col-9">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th scope="col">Student Name</th>
-                            <th scope="col">Student Course</th>
-                            <th scope="col">Grade</th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
+            <hr />
 
-                <form action="" class="col-3">
-                    <h3>Add Student</h3>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="studentName"><i class="fa fa-user"></i></span>
-                        </div>
-                        <input type="text" class="form-control" id="student-name-input" placeholder="Student Name" name="name"/>
+            <div class="student-container">
+                <div class="row">
+                    <div class="col-9">
+                        <table class="table table-hover">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Student Name</th>
+                                    <th scope="col">Student Course</th>
+                                    <th scope="col">Grade</th>
+                                    <th scope="col">Operations</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                        <p class="d-none">No Grades Recorded</p>
                     </div>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="studentCourse"><i class="fa fa-list"></i></span>
-                        </div>
-                        <input type="text" class="form-control" id="student-name-course" placeholder="Student Course" name="course"/>
+                    <div class="col-3">
+                        <form action="">
+                            <h3>Add Student</h3>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="studentName"><i class="fa fa-user"></i></span>
+                                </div>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="student-name-input"
+                                    placeholder="Student Name"
+                                    name="name"
+                                />
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="studentCourse"><i class="fa fa-list"></i></span>
+                                </div>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="student-name-course"
+                                    placeholder="Student Course"
+                                    name="course"
+                                />
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="studentGrade"
+                                        ><i class="fa fa-graduation-cap"></i
+                                    ></span>
+                                </div>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="student-name-grade"
+                                    placeholder="Student Grade"
+                                    name="grade"
+                                />
+                            </div>
+                            <input class="btn btn-success" type="submit" value="Add" />
+                            <input class="btn btn-outline-secondary" type="reset" value="Cancel" />
+                        </form>
                     </div>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="studentGrade"><i class="fa fa-graduation-cap"></i></span>
-                        </div>
-                        <input type="text" class="form-control" id="student-name-grade" placeholder="Student Grade" name="grade"/>
-                    </div>
-                    <input class="btn btn-success" type="submit" value="Add">
-                    <input class="btn btn-outline-secondary" type="reset" value="Cancel">
-                </form>
+                </div>
             </div>
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="/componets/app.js"></script>
         <script src="/componets/grade-table.js"></script>
         <script src="/componets/page-header.js"></script>
         <script src="/componets/grade-form.js"></script>
+        <script src="/componets/app.js"></script>
         <script src="main.js"></script>
     </body>
 </html>
