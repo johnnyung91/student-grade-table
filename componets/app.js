@@ -91,6 +91,15 @@ class App {
         this.getGrades();
     }
 
+    //Methods related to editing a grade
+    editGrade(id) {
+        console.log(id)
+    }
+
+    handleEditGradeError(error) {
+        console.error(error)
+    }
+
     start() {
         this.getGrades();
         this.gradeForm.onSubmit(this.createGrade);
