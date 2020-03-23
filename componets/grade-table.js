@@ -12,7 +12,7 @@ class GradeTable {
         }
         //Loop through grades and dynamically create tr
         for (var i = 0; i < grades.length; i++) {
-            tBody.appendChild(this.renderGradeRow(grades[i], this.deleteGrade));
+            tBody.appendChild(this.renderGradeRow(grades[i], this.editGrade, this.deleteGrade));
         }
         if (!grades.length) {
             this.noGradesElement.classList.remove("d-none");
@@ -26,7 +26,11 @@ class GradeTable {
         this.deleteGrade = deleteGrade;
     }
 
-    renderGradeRow(data, deleteGrade) {
+    onEditClick(editGrade) {
+        this.editGrade = editGrade;
+    }
+
+    renderGradeRow(data, editGrade, deleteGrade) {
         var dataName = document.createElement("td");
         dataName.textContent = data.name;
 
@@ -43,7 +47,7 @@ class GradeTable {
         editButton.classList.add("btn", "btn-warning", "mr-1");
         editButton.textContent = "Edit";
         editButton.addEventListener("click", function() {
-            console.log("i am working!")
+            editGrade(data.id);
         })
 
         var deleteButton = document.createElement("button");
