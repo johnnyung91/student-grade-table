@@ -39,7 +39,7 @@ class App {
         }
         var average = (sum / grades.length).toFixed(1); // average = Average of the grades
         if (isNaN(average)) {
-            average = "--"
+            average = "--";
         }
         this.pageHeader.updateAverage(average);
     }
@@ -93,11 +93,15 @@ class App {
 
     //Methods related to editing a grade
     editGrade(id) {
-        console.log(id)
+        console.log(id);
     }
 
     handleEditGradeError(error) {
-        console.error(error)
+        console.error(error);
+    }
+
+    handleEditGradeSuccess() {
+        this.getGrades();
     }
 
     start() {
