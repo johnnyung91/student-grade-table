@@ -15,11 +15,11 @@ class GradeTable {
             tBody.appendChild(this.renderGradeRow(grades[i], this.deleteGrade));
         }
         if (!grades.length) {
-            this.noGradesElement.classList.remove("d-none")
+            this.noGradesElement.classList.remove("d-none");
         } else {
             this.noGradesElement.classList.add("d-none");
         }
-        console.log(grades) //Not needed
+        console.log(grades); //Not needed
     }
 
     onDeleteClick(deleteGrade) {
@@ -36,19 +36,28 @@ class GradeTable {
         var dataGrade = document.createElement("td");
         dataGrade.textContent = data.grade;
 
-        var dataDelete = document.createElement("td");
+        var dataOperations = document.createElement("td");
+
+        var editButton = document.createElement("button");
+        editButton.setAttribute("type", "button")
+        editButton.classList.add("btn", "btn-warning", "mr-1");
+        editButton.textContent = "Edit";
+        editButton.addEventListener("click", function() {
+            console.log("i am working!")
+        })
+
         var deleteButton = document.createElement("button");
+        deleteButton.setAttribute("type", "button")
         deleteButton.classList.add("btn", "btn-danger");
         deleteButton.textContent = "Delete";
-
         deleteButton.addEventListener("click", function() {
             deleteGrade(data.id);
         });
 
-        dataDelete.appendChild(deleteButton);
+        dataOperations.append(editButton, deleteButton);
 
         var dataRow = document.createElement("tr");
-        dataRow.append(dataName, dataCourse, dataGrade, dataDelete); //using jQuery
+        dataRow.append(dataName, dataCourse, dataGrade, dataOperations); //using jQuery
 
         return dataRow;
     }
