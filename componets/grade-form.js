@@ -24,8 +24,6 @@ class GradeForm {
         var grade = formData.get("grade");
         if (this.editingMode) {
             this.editGrade(this.currentGrade, name, course, grade);
-            this.currentGradeId = null;
-            this.editingMode = false;
             this.resetForm();
             event.target.reset();
         } else {
@@ -36,8 +34,6 @@ class GradeForm {
 
     handleCancel(event) {
         event.target.reset();
-        this.currentGradeId = null;
-        this.editingMode = false;
         this.resetForm();
     }
 
@@ -54,7 +50,7 @@ class GradeForm {
         nameValue.value = data.name;
         nameCourse.value = data.course;
         nameGrade.value = data.grade;
-        formButton.value = "Edit";
+        formButton.value = "Update";
     }
 
     resetForm() {
@@ -62,5 +58,7 @@ class GradeForm {
         var formButton = document.querySelector("input.btn-success");
         formHeading.textContent = "Add Student";
         formButton.value = "Add";
+        this.currentGradeId = null;
+        this.editingMode = false;
     }
 }
