@@ -11,6 +11,9 @@ class App {
         this.deleteGrade = this.deleteGrade.bind(this);
         this.handleDeleteGradeError = this.handleDeleteGradeError.bind(this);
         this.handleDeleteGradeSuccess = this.handleDeleteGradeSuccess.bind(this);
+        this.getExistingGrade = this.getExistingGrade.bind(this);
+        this.handleEditGradeError = this.handleEditGradeError.bind(this);
+        this.handleEditGradeSuccess = this.handleEditGradeSuccess.bind(this);
     }
 
     //Methods related to getting grades
@@ -92,8 +95,8 @@ class App {
     }
 
     //Methods related to editing a grade
-    editGrade(id) {
-        console.log(id);
+    getExistingGrade(data) {
+        this.gradeForm.startEditing(data)
     }
 
     handleEditGradeError(error) {
@@ -108,6 +111,6 @@ class App {
         this.getGrades();
         this.gradeForm.onSubmit(this.createGrade);
         this.gradeTable.onDeleteClick(this.deleteGrade);
-        this.gradeTable.onEditClick(this.editGrade);
+        this.gradeTable.onEditClick(this.getExistingGrade);
     }
 }
