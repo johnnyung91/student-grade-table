@@ -42,18 +42,14 @@ class GradeTable {
 
         var dataOperations = document.createElement("td");
 
-        var editButton = document.createElement("button");
-        editButton.setAttribute("type", "button")
-        editButton.classList.add("btn", "btn-warning", "mr-1");
-        editButton.textContent = "Edit";
+        var editButton = document.createElement("i");
+        editButton.classList.add("fas", "fa-edit", "fa-lg", "pr-5");
         editButton.addEventListener("click", function() {
             getExistingGrade(data);
-        })
+        });
 
-        var deleteButton = document.createElement("button");
-        deleteButton.setAttribute("type", "button")
-        deleteButton.classList.add("btn", "btn-danger");
-        deleteButton.textContent = "Delete";
+        var deleteButton = document.createElement("i");
+        deleteButton.classList.add("fas", "fa-trash", "fa-lg","pr-5");
         deleteButton.addEventListener("click", function() {
             deleteGrade(data.id);
         });
