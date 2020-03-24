@@ -2,6 +2,19 @@
     width: 16px;
 }
 
+.fas {
+    width: 20px;
+    cursor: pointer;
+}
+
+.fa-edit {
+    color: dodgerblue;
+}
+
+.fa-trash {
+    color: gray;
+}
+
 header h3 {
     text-align: right;
 }
@@ -10,6 +23,4 @@ header h3 {
     header h3, h1 {
         text-align: center;
     }
-
-
 }

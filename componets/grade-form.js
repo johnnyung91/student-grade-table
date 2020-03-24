@@ -1,3 +1,10 @@
+//Query Selectors for startEditing
+var formHeading = document.querySelector("form h3");
+var formButton = document.querySelector("input.btn-success");
+var nameValue = document.getElementById("student-name-input");
+var nameCourse = document.getElementById("student-name-course");
+var nameGrade = document.getElementById("student-name-grade");
+
 class GradeForm {
     constructor(formElement) {
         this.formElement = formElement;
@@ -40,22 +47,14 @@ class GradeForm {
     startEditing(data) {
         this.editingMode = true;
         this.currentGrade = data.id;
-        var formHeading = document.querySelector("form h3");
-        var formButton = document.querySelector("input.btn-success");
-        var nameValue = document.getElementById("student-name-input");
-        var nameCourse = document.getElementById("student-name-course");
-        var nameGrade = document.getElementById("student-name-grade");
-
         formHeading.textContent = "Update Student";
+        formButton.value = "Update";
         nameValue.value = data.name;
         nameCourse.value = data.course;
         nameGrade.value = data.grade;
-        formButton.value = "Update";
     }
 
     resetForm() {
-        var formHeading = document.querySelector("form h3");
-        var formButton = document.querySelector("input.btn-success");
         formHeading.textContent = "Add Student";
         formButton.value = "Add";
         this.currentGradeId = null;
