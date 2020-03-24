@@ -1,0 +1,15 @@
+.fa {
+    width: 16px;
+}
+
+header h3 {
+    text-align: right;
+}
+
+@media only screen and (max-width: 992px) {
+    header h3, h1 {
+        text-align: center;
+    }
+
+
+}
