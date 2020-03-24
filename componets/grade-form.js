@@ -36,6 +36,8 @@ class GradeForm {
 
     handleCancel(event) {
         event.target.reset();
+        this.currentGradeId = null;
+        this.editingMode = false;
         this.resetForm();
     }
 
